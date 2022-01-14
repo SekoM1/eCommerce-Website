@@ -1,0 +1,23 @@
+#products {
+  flex-wrap: wrap;
+}
+
+#products img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.card {
+  width: calc(100% / 3);
+  
+}
+*{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+
+}
+
+.nav-link{
+  display: inline-block;
+  padding: 5rem 5rem
+}
