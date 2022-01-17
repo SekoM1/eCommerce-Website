@@ -6,13 +6,22 @@ console.log(cart);
 // READ
 function readProducts(products) {
   document.querySelector("#cart").innerHTML = "";
+
+  // let total = cart
+  //   .reduce((total, product) => {
+  //     return total + product.price * product.qty;
+  //   }, 0)
+  //   .toFixed(2);
+
   products.forEach((product, position) => {
+    console.log(product);
     document.querySelector("#cart").innerHTML += `
         <div class="card">
           <img src="${product.img}" class="card-img-top" alt="${product.title}">
           <div class="card-body">
             <h5 class="card-title">${product.title}</h5>
-            <p class="card-text">R${product.price}</p>
+            <p class="card-title">Qty:${product.qty}</p>
+
             <p class="card-text">R${product.price * product.qty}</p>
             
             <button type="button" class="btn btn-danger" onclick="deleteCart(${position})" >
@@ -27,6 +36,7 @@ function readProducts(products) {
             `;
   });
 }
+
 readProducts(cart);
 
 // total price
@@ -49,6 +59,19 @@ function deleteCart(position) {
     readProducts(cart);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 // // sort by catergoty
 
 // function sortCategory(){
@@ -61,6 +84,6 @@ function deleteCart(position) {
 // sort by name
 
 // function sortName(){
-//     let dirrecttion = document.querySelector("#sortName").value;
+//     let direction = document.querySelector("#sortName").value;
 
 //     products=products.sort((a,b) => a.title - b.title);
